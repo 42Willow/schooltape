@@ -7,7 +7,7 @@
     // Set version number
     // Uses manifest.version_name when available (on mv3)
     let manifest = browser.runtime.getManifest();
-    let version = import.meta.env.MANIFEST_VERSION === 2 ? manifest.version : manifest.version_name;
+    let version = manifest.version_name || manifest.version;
     let prefix = version.length <= 5 ? "Version: v" : "v";
 
     verNum = prefix + version;
